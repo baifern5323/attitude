@@ -1,0 +1,26 @@
+
+body {
+  background: #e9effa; /* สีพื้นหลังคล้ายในภาพ */
+}
+header {
+  background: #e9effa;
+}
+.nav-link {
+  color: #3c4250 !important;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.nav-link.active, .nav-link:hover {
+  color: #111c36 !important;
+  text-decoration: underline;
+}
+@media (max-width: 991.98px) {
+  .nav.justify-content-center {
+    flex-direction: column !important;
+    align-items: center;
+  }
+  .nav-item {
+    width: 100%;
+    text-align: center;
+  }
+}
