@@ -3,6 +3,9 @@ body {
 }
 header {
   background: #dee5f1;
+  position: sticky;
+  top: 0;
+  z-index: 100; /* ทำให้ Navbar อยู่เหนือเนื้อหาอื่นเสมอ */
 }
 .nav-link {
   color: #3c4250 !important;
