@@ -2,7 +2,7 @@ body {
   background: #5b3b22;
 }
 header {
-  background: #e9effa;
+  background: #dee5f1;
 }
 .nav-link {
   color: #3c4250 !important;
@@ -45,4 +45,132 @@ header {
   .navbar-toggler {
     display: none !important;
   }
+}
+.dropdown-item:active,
+.dropdown-item.active {
+  background-color: #9b270d !important; /* สีแดง Bootstrap */
+  color: #fff !important; /* ตัวอักษรขาว */
+}
+.dropdown-item:hover {
+  background-color: #9b270d !important;
+  color: #fff !important;
+}
+/*วีดิโอ*/
+/* --- Video Section --- */
+
+.video-container {
+  width: 100%;
+
+  /* (สำคัญ) กำหนดสัดส่วนภาพที่นี่! */
+  /* เปลี่ยน 16 / 9 เป็นสัดส่วนของวิดีโอคุณ เช่น 4 / 3 หรือ 1 / 1 */
+  aspect-ratio: 16 / 9;
+
+  /* (สำคัญ) จำกัดความสูงบนจอมือถือแนวตั้งไม่ให้วิดีโอยาวเกินไป */
+  max-height: 85vh;
+
+  background-color: rgb(250, 249, 249); /* สีพื้นหลังเผื่อวิดีโอโหลดช้า */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.video-container video {
+  width: 100%;
+  height: 100%;
+  /* ใช้ cover ได้อย่างปลอดภัย เพราะกรอบมีสัดส่วนที่ถูกต้องแล้ว 
+    วิดีโอจะเต็มกรอบพอดีโดยไม่บิดเบี้ยว
+  */
+  object-fit: cover;
+}
+/* --- ส่วนที่เหลือของ layout (ไม่ต้องแก้ไข) --- */
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+header,
+#footer {
+  flex-shrink: 0;
+}
+/*ปุ่มลอย*/
+.fab-container {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.fab-button {
+  width: 60px;
+  height: 60px;
+  background-color: #f44336;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.fab-button:hover {
+  background-color: #e53935;
+}
+
+.fab-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  transition: all 0.3s ease;
+  transform: scale(0);
+  transform-origin: bottom center;
+}
+
+.fab-container.active .fab-options {
+  transform: scale(1);
+}
+
+.fab-option {
+  width: 45px;
+  height: 45px;
+  background-color: #4caf50;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-bottom: 15px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease;
+}
+
+.fab-option:hover {
+  background-color: #43a047;
+}
+
+/* ทำให้ไอคอนหมุนเมื่อเปิด */
+.fab-container.active #fab-main {
+  transform: rotate(45deg);
+}
+
+/* เปลี่ยนไอคอนเมื่อคลิก (ถ้าต้องการ) */
+.fab-container.active #fab-main i {
+  content: "close"; /* อาจจะต้องใช้ JavaScript จัดการ */
 }
